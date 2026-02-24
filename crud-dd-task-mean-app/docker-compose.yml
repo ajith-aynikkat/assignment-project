@@ -10,7 +10,7 @@ services:
       - mongo-data:/data/db
 
   backend:
-    image: yourdockerhub/backend:latest
+    build: ./backend
     depends_on:
       - mongodb
     environment:
@@ -19,7 +19,7 @@ services:
       - "3000:3000"
 
   frontend:
-    image: yourdockerhub/frontend:latest
+    build: ./frontend
 
   nginx:
     image: nginx:latest
